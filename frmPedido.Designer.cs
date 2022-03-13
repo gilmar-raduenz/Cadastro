@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedido));
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtVlTotal = new System.Windows.Forms.TextBox();
             this.txtPesoTotal = new System.Windows.Forms.TextBox();
             this.dtgvItem = new System.Windows.Forms.DataGridView();
@@ -51,6 +50,8 @@
             this.btSalvar = new System.Windows.Forms.ToolStripButton();
             this.btExcluir = new System.Windows.Forms.ToolStripButton();
             this.gbox = new System.Windows.Forms.GroupBox();
+            this.btPesquisa = new System.Windows.Forms.Button();
+            this.txtDtPedido = new System.Windows.Forms.MaskedTextBox();
             this.btnConsulta = new System.Windows.Forms.Button();
             this.txtNmCliente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,8 +59,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNrPedido = new System.Windows.Forms.TextBox();
-            this.txtDtPedido = new System.Windows.Forms.MaskedTextBox();
-            this.btPesquisa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvItem)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.gbox.SuspendLayout();
@@ -68,37 +67,28 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(328, 321);
+            this.label6.Location = new System.Drawing.Point(520, 321);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 35;
-            this.label6.Text = "Preço Total:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(568, 321);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Peso Total:";
+            this.label6.Text = "Totais:";
             // 
             // txtVlTotal
             // 
-            this.txtVlTotal.Location = new System.Drawing.Point(399, 318);
+            this.txtVlTotal.Location = new System.Drawing.Point(565, 318);
             this.txtVlTotal.Name = "txtVlTotal";
             this.txtVlTotal.ReadOnly = true;
-            this.txtVlTotal.Size = new System.Drawing.Size(89, 20);
+            this.txtVlTotal.Size = new System.Drawing.Size(80, 20);
             this.txtVlTotal.TabIndex = 4;
             this.txtVlTotal.TabStop = false;
             this.txtVlTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPesoTotal
             // 
-            this.txtPesoTotal.Location = new System.Drawing.Point(635, 318);
+            this.txtPesoTotal.Location = new System.Drawing.Point(651, 318);
             this.txtPesoTotal.Name = "txtPesoTotal";
             this.txtPesoTotal.ReadOnly = true;
-            this.txtPesoTotal.Size = new System.Drawing.Size(89, 20);
+            this.txtPesoTotal.Size = new System.Drawing.Size(80, 20);
             this.txtPesoTotal.TabIndex = 5;
             this.txtPesoTotal.TabStop = false;
             this.txtPesoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -120,6 +110,7 @@
             this.dtgvItem.Size = new System.Drawing.Size(734, 166);
             this.dtgvItem.TabIndex = 5;
             this.dtgvItem.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvItem_CellEndEdit);
+            this.dtgvItem.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgvItem_CellMouseDoubleClick);
             // 
             // Codigo
             // 
@@ -141,10 +132,10 @@
             // 
             // Quantidade
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = null;
-            this.Quantidade.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Quantidade.DefaultCellStyle = dataGridViewCellStyle1;
             this.Quantidade.FillWeight = 70F;
             this.Quantidade.HeaderText = "Quantidade";
             this.Quantidade.Name = "Quantidade";
@@ -154,10 +145,10 @@
             // 
             // PrecoUnitario
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "N2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.PrecoUnitario.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.PrecoUnitario.DefaultCellStyle = dataGridViewCellStyle2;
             this.PrecoUnitario.FillWeight = 80F;
             this.PrecoUnitario.HeaderText = "Preco Unitário";
             this.PrecoUnitario.Name = "PrecoUnitario";
@@ -166,10 +157,10 @@
             // 
             // PesoLiq
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "N3";
-            dataGridViewCellStyle13.NullValue = null;
-            this.PesoLiq.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N3";
+            dataGridViewCellStyle3.NullValue = null;
+            this.PesoLiq.DefaultCellStyle = dataGridViewCellStyle3;
             this.PesoLiq.FillWeight = 80F;
             this.PesoLiq.HeaderText = "Peso Liquido";
             this.PesoLiq.Name = "PesoLiq";
@@ -178,10 +169,10 @@
             // 
             // PrecoTotal
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "N2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.PrecoTotal.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.PrecoTotal.DefaultCellStyle = dataGridViewCellStyle4;
             this.PrecoTotal.FillWeight = 80F;
             this.PrecoTotal.HeaderText = "Preço Total";
             this.PrecoTotal.Name = "PrecoTotal";
@@ -190,10 +181,10 @@
             // 
             // PesoTotal
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "N3";
-            dataGridViewCellStyle15.NullValue = null;
-            this.PesoTotal.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N3";
+            dataGridViewCellStyle5.NullValue = null;
+            this.PesoTotal.DefaultCellStyle = dataGridViewCellStyle5;
             this.PesoTotal.FillWeight = 80F;
             this.PesoTotal.HeaderText = "Peso Total";
             this.PesoTotal.Name = "PesoTotal";
@@ -260,6 +251,26 @@
             this.gbox.TabStop = false;
             this.gbox.Text = "Pedido";
             // 
+            // btPesquisa
+            // 
+            this.btPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btPesquisa.Image")));
+            this.btPesquisa.Location = new System.Drawing.Point(165, 75);
+            this.btPesquisa.Name = "btPesquisa";
+            this.btPesquisa.Size = new System.Drawing.Size(24, 19);
+            this.btPesquisa.TabIndex = 48;
+            this.btPesquisa.UseVisualStyleBackColor = true;
+            this.btPesquisa.Click += new System.EventHandler(this.btPesquisa_Click);
+            // 
+            // txtDtPedido
+            // 
+            this.txtDtPedido.Location = new System.Drawing.Point(95, 45);
+            this.txtDtPedido.Mask = "00/00/0000";
+            this.txtDtPedido.Name = "txtDtPedido";
+            this.txtDtPedido.Size = new System.Drawing.Size(68, 20);
+            this.txtDtPedido.TabIndex = 2;
+            this.txtDtPedido.TabStop = false;
+            this.txtDtPedido.ValidatingType = typeof(System.DateTime);
+            // 
             // btnConsulta
             // 
             this.btnConsulta.Location = new System.Drawing.Point(169, 19);
@@ -321,26 +332,6 @@
             this.txtNrPedido.Size = new System.Drawing.Size(68, 20);
             this.txtNrPedido.TabIndex = 1;
             // 
-            // txtDtPedido
-            // 
-            this.txtDtPedido.Location = new System.Drawing.Point(95, 45);
-            this.txtDtPedido.Mask = "00/00/0000";
-            this.txtDtPedido.Name = "txtDtPedido";
-            this.txtDtPedido.Size = new System.Drawing.Size(68, 20);
-            this.txtDtPedido.TabIndex = 2;
-            this.txtDtPedido.TabStop = false;
-            this.txtDtPedido.ValidatingType = typeof(System.DateTime);
-            // 
-            // btPesquisa
-            // 
-            this.btPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btPesquisa.Image")));
-            this.btPesquisa.Location = new System.Drawing.Point(165, 75);
-            this.btPesquisa.Name = "btPesquisa";
-            this.btPesquisa.Size = new System.Drawing.Size(24, 19);
-            this.btPesquisa.TabIndex = 48;
-            this.btPesquisa.UseVisualStyleBackColor = true;
-            this.btPesquisa.Click += new System.EventHandler(this.btPesquisa_Click);
-            // 
             // frmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,7 +341,6 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dtgvItem);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtVlTotal);
             this.Controls.Add(this.txtPesoTotal);
             this.Name = "frmPedido";
@@ -368,7 +358,6 @@
 
         #endregion
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtVlTotal;
         private System.Windows.Forms.TextBox txtPesoTotal;
         private System.Windows.Forms.DataGridView dtgvItem;
@@ -384,6 +373,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNrPedido;
+        private System.Windows.Forms.MaskedTextBox txtDtPedido;
+        private System.Windows.Forms.Button btPesquisa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
@@ -391,7 +382,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PesoLiq;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecoTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn PesoTotal;
-        private System.Windows.Forms.MaskedTextBox txtDtPedido;
-        private System.Windows.Forms.Button btPesquisa;
     }
 }

@@ -178,6 +178,7 @@ namespace Teste
                     dtgvItem.Rows[e.RowIndex].Cells[1].Value = Prod[0];
                     dtgvItem.Rows[e.RowIndex].Cells[3].Value = Prod[1];
                     dtgvItem.Rows[e.RowIndex].Cells[4].Value = Prod[2];
+                    dtgvItem.CurrentCell = dtgvItem.Rows[e.RowIndex].Cells[2];
                 }
             }
             if (e.ColumnIndex == 2)
@@ -224,6 +225,27 @@ namespace Teste
             {
                 txtCDCliente.Text = Global.Codigo.ToString();
                 txtNmCliente.Text = ClientesDAO.Cliente(Global.Codigo);
+            }
+            Global.Codigo = 0;
+        }
+
+        private void dtgvItem_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            frmPesquisa frm;
+            frm = new frmPesquisa(2);
+            frm.ShowDialog();
+            if (Global.Codigo > 0)
+            {
+                object[] Prod = new object[4];
+                Prod = ProdutoDAO.Produto(Global.Codigo);
+                if (e.ColumnIndex == 0)
+                {
+                    dtgvItem.Rows[e.RowIndex].Cells[0].Value = Global.Codigo;
+                    dtgvItem.Rows[e.RowIndex].Cells[1].Value = Prod[0];
+                    dtgvItem.Rows[e.RowIndex].Cells[3].Value = Prod[1];
+                    dtgvItem.Rows[e.RowIndex].Cells[4].Value = Prod[2];
+                    dtgvItem.CurrentCell = dtgvItem.Rows[e.RowIndex].Cells[2];
+                }
             }
             Global.Codigo = 0;
         }
