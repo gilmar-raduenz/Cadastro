@@ -59,21 +59,21 @@
             // mnuClientes
             // 
             this.mnuClientes.Name = "mnuClientes";
-            this.mnuClientes.Size = new System.Drawing.Size(180, 22);
+            this.mnuClientes.Size = new System.Drawing.Size(122, 22);
             this.mnuClientes.Text = "Clientes";
             this.mnuClientes.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // mnuProdutos
             // 
             this.mnuProdutos.Name = "mnuProdutos";
-            this.mnuProdutos.Size = new System.Drawing.Size(180, 22);
+            this.mnuProdutos.Size = new System.Drawing.Size(122, 22);
             this.mnuProdutos.Text = "Produtos";
             this.mnuProdutos.Click += new System.EventHandler(this.mnuProdutos_Click);
             // 
             // mnuPedidos
             // 
             this.mnuPedidos.Name = "mnuPedidos";
-            this.mnuPedidos.Size = new System.Drawing.Size(180, 22);
+            this.mnuPedidos.Size = new System.Drawing.Size(122, 22);
             this.mnuPedidos.Text = "Pedidos";
             this.mnuPedidos.Click += new System.EventHandler(this.mnuPedidos_Click);
             // 
@@ -83,9 +83,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 214);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
